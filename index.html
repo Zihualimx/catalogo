@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Zihualí · Catálogo digital · Primera Colección Herencia y Raíz · Joyería artesanal en chaquira tejida a mano por mujeres de la Sierra Norte de Puebla." />
+  <title>Zihualí · Catálogo Herencia y Raíz · 8 de Mayo 2026</title>
+
+  <!-- Open Graph para que se vea bonito al compartir en WhatsApp/Facebook -->
+  <meta property="og:title" content="Zihualí · Catálogo Herencia y Raíz" />
+  <meta property="og:description" content="Primera Colección · Tejida en Marzo 2026 · Joyería artesanal en chaquira de la Sierra Norte de Puebla." />
+  <meta property="og:image" content="assets/img/jardin-infinito.jpeg" />
+  <meta property="og:type" content="website" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/img/logo-zihuali-trans.png" />
+
+  <!-- Tipografías -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --azul: #1a2240;
+      --azul-dark: #0f1530;
+      --azul-tinta: #2a3454;
+      --dorado: #c9a961;
+      --dorado-light: #e4cc91;
+      --dorado-dark: #9c7f3e;
+      --crema: #f4ede0;
+      --crema-light: #faf6ec;
+      --tinta: #1a1a1a;
+      --gris-suave: #e8e2d3;
+      --font-display: 'Cormorant Garamond', 'Times New Roman', serif;
+      --font-body: 'Manrope', system-ui, sans-serif;
+      --transition: 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--tinta);
+      background: var(--crema);
+      font-weight: 300;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; display: block; height: auto; }
+    a { color: inherit; text-decoration: none; }
+
+    .eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: var(--dorado-dark);
+      display: inline-block;
+    }
+
+    .container {
+      width: min(100% - 2.5rem, 1200px);
+      margin-inline: auto;
+    }
+
+    /* NAV */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 1.25rem 0;
+      transition: all 0.4s ease;
+      background: transparent;
+    }
+    .nav.scrolled {
+      background: rgba(26, 34, 64, 0.96);
+      backdrop-filter: blur(12px);
+      padding: 0.875rem 0;
+      box-shadow: 0 1px 0 rgba(201, 169, 97, 0.2);
+    }
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 1.625rem;
+      font-style: italic;
+      color: var(--crema);
+    }
+    .nav-logo span { color: var(--dorado); }
+    .nav-cta {
+      background: var(--dorado);
+      color: var(--azul);
+      padding: 0.625rem 1.5rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 600;
+      transition: all var(--transition);
+      cursor: pointer;
+      font-family: var(--font-body);
+    }
+    .nav-cta:hover {
+      background: var(--dorado-light);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(201, 169, 97, 0.3);
+    }
+
+    /* PORTADA */
+    .portada {
+      min-height: 100vh;
+      background: var(--azul-dark);
+      color: var(--crema);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6rem 1rem 4rem;
+    }
+    .portada::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 25% 30%, rgba(201, 169, 97, 0.25) 1.8px, transparent 1.8px),
+        radial-gradient(circle at 75% 70%, rgba(201, 169, 97, 0.18) 2.5px, transparent 2.5px);
+      background-size: 80px 80px, 110px 110px;
+    }
+    .portada-content {
+      text-align: center;
+      position: relative;
+      z-index: 5;
+      max-width: 700px;
+      padding: 4rem 2rem;
+      border: 1px solid rgba(201, 169, 97, 0.4);
+      animation: fadeUp 1s ease;
+    }
+    .portada-content::before, .portada-content::after {
+      content: "";
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      border: 1.5px solid var(--dorado);
+    }
+    .portada-content::before { top: -1px; left: -1px; border-right: none; border-bottom: none; }
+    .portada-content::after { bottom: -1px; right: -1px; border-left: none; border-top: none; }
+    .portada-tag {
+      font-size: 0.6875rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--dorado);
+      margin-bottom: 2.5rem;
+      font-weight: 500;
+    }
+    .portada-logo {
+      width: 120px;
+      margin: 0 auto 1.5rem;
+      opacity: 0.95;
+    }
+    .portada-titulo {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(3.5rem, 9vw, 5.5rem);
+      line-height: 0.95;
+      color: var(--crema);
+    }
+    .portada-subtitulo {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(1.25rem, 3vw, 1.75rem);
+      color: var(--dorado);
+      margin-bottom: 2rem;
+    }
+    .portada-divider {
+      width: 60px;
+      height: 1px;
+      background: var(--dorado);
+      border: none;
+      margin: 2rem auto;
+    }
+    .portada-coleccion-label {
+      font-size: 0.875rem;
+      color: var(--crema);
+      margin-bottom: 0.5rem;
+    }
+    .portada-coleccion-nombre {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1.5rem;
+      color: var(--dorado-light);
+      margin-bottom: 0.75rem;
+    }
+    .portada-fechas {
+      font-size: 0.6875rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--dorado);
+      font-weight: 500;
+      margin-top: 1rem;
+    }
+    .portada-frase {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--crema);
+      margin-top: 2.5rem;
+      line-height: 1.5;
+      opacity: 0.85;
+    }
+    .scroll-cue {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      color: var(--dorado);
+      font-size: 0.6875rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      writing-mode: vertical-rl;
+      animation: bounce 2s infinite;
+      z-index: 5;
+    }
+    .scroll-cue::after {
+      content: "";
+      display: block;
+      width: 1px;
+      height: 32px;
+      background: var(--dorado);
+      margin: 12px auto 0;
+    }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes bounce { 0%,100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(8px); } }
+
+    /* MANIFIESTO */
+    .manifiesto {
+      padding: 7rem 0;
+      background: var(--crema);
+      position: relative;
+    }
+    .manifiesto::before, .manifiesto::after {
+      content: "";
+      position: absolute;
+      left: 0; right: 0;
+      height: 4px;
+      background: var(--dorado);
+    }
+    .manifiesto::before { top: 0; }
+    .manifiesto::after { bottom: 0; }
+    .manifiesto-content { max-width: 700px; margin: 0 auto; padding: 0 1rem; }
+    .manifiesto h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      font-weight: 400;
+      line-height: 1.05;
+      margin: 1.5rem 0 2rem;
+      color: var(--azul);
+    }
+    .manifiesto h2 em { font-style: italic; color: var(--dorado-dark); }
+    .manifiesto-divider {
+      width: 60px; height: 1px;
+      background: var(--dorado-dark);
+      border: none;
+      margin: 2rem 0;
+    }
+    .manifiesto p {
+      margin-bottom: 1.25rem;
+      color: var(--azul-tinta);
+      font-size: 1.0625rem;
+      line-height: 1.75;
+    }
+    .manifiesto-firma {
+      font-family: var(--font-display);
+      font-style: italic;
+      color: var(--dorado-dark);
+      font-size: 1.125rem;
+      margin-top: 2.5rem;
+    }
+
+    /* ESTRATEGIA */
+    .estrategia {
+      padding: 7rem 0;
+      background: var(--azul);
+      color: var(--crema);
+      position: relative;
+    }
+    .estrategia::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle at 30% 60%, rgba(201, 169, 97, 0.1) 1.5px, transparent 1.5px);
+      background-size: 80px 80px;
+    }
+    .estrategia-header {
+      text-align: center;
+      margin-bottom: 5rem;
+      position: relative;
+      z-index: 2;
+    }
+    .estrategia-header .eyebrow { color: var(--dorado); }
+    .estrategia-header h2 {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(2.25rem, 5vw, 3rem);
+      font-weight: 400;
+      margin-top: 1rem;
+      color: var(--crema);
+    }
+    .estrategia-header hr {
+      width: 60px;
+      height: 1px;
+      background: var(--dorado);
+      border: none;
+      margin: 2rem auto 0;
+    }
+    .estrategia-grid {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+    .est-bloque {
+      padding: 2.5rem 0;
+      border-bottom: 1px solid rgba(201, 169, 97, 0.25);
+    }
+    .est-bloque:last-child { border-bottom: none; }
+    .est-label {
+      font-size: 0.6875rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--dorado);
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+    .est-titulo {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 400;
+      color: var(--crema);
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+    }
+    .est-descripcion {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: rgba(244, 237, 224, 0.8);
+      max-width: 640px;
+    }
+
+    /* VALORES */
+    .valores {
+      padding: 7rem 0;
+      background: var(--crema);
+    }
+    .valores-header { text-align: center; margin-bottom: 4rem; }
+    .valores-header h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      font-weight: 400;
+      line-height: 1.05;
+      margin-top: 1rem;
+      color: var(--azul);
+    }
+    .valores-header h2 em { font-style: italic; color: var(--dorado-dark); }
+    .valores-header p {
+      max-width: 540px;
+      margin: 1.5rem auto 0;
+      color: var(--azul-tinta);
+      font-style: italic;
+      font-family: var(--font-display);
+      font-size: 1.125rem;
+    }
+    .valores-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .valor-item {
+      border-top: 1px solid var(--dorado-dark);
+      padding-top: 1.75rem;
+    }
+    .valor-num {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1.125rem;
+      color: var(--dorado-dark);
+    }
+    .valor-titulo {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 2rem;
+      color: var(--dorado-dark);
+      line-height: 1.05;
+      margin: 0.5rem 0 1rem;
+    }
+    .valor-desc {
+      font-size: 0.9375rem;
+      color: var(--azul-tinta);
+      line-height: 1.6;
+    }
+
+    /* PORTADILLA SECCIÓN */
+    .seccion-portadilla {
+      padding: 8rem 0;
+      background: var(--azul);
+      color: var(--crema);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .seccion-portadilla::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle at 20% 30%, rgba(201, 169, 97, 0.15) 1.5px, transparent 1.5px);
+      background-size: 90px 90px;
+    }
+    .seccion-portadilla-content {
+      position: relative;
+      z-index: 2;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    .seccion-portadilla .eyebrow {
+      color: var(--dorado);
+      font-size: 0.6875rem;
+      letter-spacing: 0.4em;
+    }
+    .seccion-portadilla h2 {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 8vw, 5rem);
+      font-weight: 400;
+      line-height: 0.95;
+      margin: 1.5rem 0 1rem;
+      color: var(--crema);
+    }
+    .seccion-portadilla h2 em { font-style: italic; color: var(--dorado); }
+    .seccion-portadilla hr {
+      width: 60px; height: 1px;
+      background: var(--dorado);
+      border: none;
+      margin: 2rem auto;
+    }
+    .seccion-portadilla p {
+      color: rgba(244, 237, 224, 0.85);
+      font-size: 1.0625rem;
+      line-height: 1.7;
+    }
+
+    /* PIEZA */
+    .pieza {
+      padding: 6rem 0;
+      background: var(--crema);
+      border-bottom: 1px solid var(--gris-suave);
+    }
+    .pieza:nth-child(even) { background: var(--crema-light); }
+    .pieza-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .pieza:nth-child(even) .pieza-grid { direction: rtl; }
+    .pieza:nth-child(even) .pieza-grid > * { direction: ltr; }
+    .pieza-imagen-wrapper {
+      position: relative;
+      aspect-ratio: 4/5;
+      overflow: hidden;
+      background: var(--azul);
+    }
+    .pieza-imagen-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 1s ease;
+    }
+    .pieza-imagen-wrapper:hover img { transform: scale(1.04); }
+    .pieza-imagen-frame {
+      position: absolute;
+      inset: 12px;
+      border: 1px solid rgba(201, 169, 97, 0.5);
+      pointer-events: none;
+      z-index: 2;
+    }
+    .pieza-categoria {
+      font-size: 0.6875rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--dorado-dark);
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+    .pieza-nombre {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400;
+      color: var(--azul);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+    .pieza-divider {
+      width: 50px;
+      height: 1px;
+      background: var(--dorado-dark);
+      border: none;
+      margin: 1rem 0 1.5rem;
+    }
+    .pieza-ref {
+      font-size: 0.6875rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--dorado-dark);
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+    }
+    .pieza-copy {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1.25rem;
+      color: var(--azul);
+      line-height: 1.45;
+      margin-bottom: 2rem;
+      max-width: 480px;
+    }
+    .pieza-specs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      padding: 1.5rem 0;
+      border-top: 1px solid var(--gris-suave);
+      border-bottom: 1px solid var(--gris-suave);
+      margin-bottom: 1.5rem;
+    }
+    .spec-label {
+      font-size: 0.6875rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--dorado-dark);
+      font-weight: 500;
+      margin-bottom: 0.4rem;
+    }
+    .spec-value {
+      font-size: 0.9375rem;
+      color: var(--tinta);
+      line-height: 1.4;
+    }
+    .pieza-reserva-label {
+      font-size: 0.6875rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--dorado-dark);
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+    .btn-reserva {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: var(--azul);
+      color: var(--dorado);
+      padding: 1.1rem 2rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      font-weight: 600;
+      transition: all var(--transition);
+      font-family: var(--font-body);
+    }
+    .btn-reserva:hover {
+      background: var(--dorado);
+      color: var(--azul);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(201, 169, 97, 0.25);
+    }
+
+    /* CIERRE */
+    .cierre {
+      padding: 8rem 0;
+      background: var(--azul-dark);
+      color: var(--crema);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cierre::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 25% 30%, rgba(201, 169, 97, 0.18) 2px, transparent 2px),
+        radial-gradient(circle at 75% 70%, rgba(201, 169, 97, 0.12) 3px, transparent 3px);
+      background-size: 90px 90px, 120px 120px;
+    }
+    .cierre-content {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      position: relative;
+      z-index: 2;
+    }
+    .cierre h2 {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 400;
+      line-height: 1;
+      margin: 1.5rem 0;
+      color: var(--crema);
+    }
+    .cierre h2 em { color: var(--dorado); }
+    .cierre p {
+      color: rgba(244, 237, 224, 0.85);
+      font-size: 1.0625rem;
+      line-height: 1.7;
+      margin-bottom: 3rem;
+    }
+    .cierre-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      max-width: 600px;
+      margin: 0 auto 3rem;
+    }
+    .cierre-card {
+      border: 1px solid var(--dorado);
+      padding: 2rem 1.5rem;
+      transition: all var(--transition);
+      cursor: pointer;
+      background: rgba(15, 21, 48, 0.4);
+      backdrop-filter: blur(8px);
+    }
+    .cierre-card:hover {
+      background: rgba(201, 169, 97, 0.15);
+      transform: translateY(-4px);
+    }
+    .cierre-card-label {
+      font-size: 0.6875rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--dorado);
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+    }
+    .cierre-card-value {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1.375rem;
+      color: var(--crema);
+      margin-bottom: 0.5rem;
+    }
+    .cierre-card-desc {
+      font-size: 0.8125rem;
+      color: rgba(244, 237, 224, 0.7);
+    }
+    .cierre-info {
+      font-size: 0.875rem;
+      color: rgba(244, 237, 224, 0.75);
+      margin-bottom: 2rem;
+    }
+    .cierre-quote {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1.125rem;
+      color: var(--dorado-light);
+      line-height: 1.5;
+      margin-top: 3rem;
+    }
+    .cierre-tagline {
+      font-size: 0.6875rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--dorado);
+      margin-top: 3rem;
+      font-weight: 500;
+    }
+
+    /* WHATSAPP FLOATING */
+    .whatsapp-floating {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      width: 60px;
+      height: 60px;
+      background: #25D366;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+      z-index: 50;
+      transition: all var(--transition);
+    }
+    .whatsapp-floating:hover {
+      transform: scale(1.1);
+      box-shadow: 0 12px 32px rgba(37, 211, 102, 0.5);
+    }
+    .whatsapp-floating svg { width: 32px; height: 32px; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .pieza { padding: 4rem 0; }
+      .pieza-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        direction: ltr !important;
+      }
+      .pieza-grid > * { direction: ltr !important; }
+      .valores-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .cierre-grid { grid-template-columns: 1fr; }
+      .manifiesto, .estrategia, .valores, .cierre { padding: 5rem 0; }
+      .pieza-specs { grid-template-columns: 1fr; gap: 1rem; }
+      .whatsapp-floating { width: 54px; height: 54px; }
+      .whatsapp-floating svg { width: 28px; height: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="#" class="nav-logo">Zihual<span>í</span></a>
+      <a href="https://wa.me/525530523038?text=Hola%20Zihual%C3%AD%2C%20vi%20su%20cat%C3%A1logo%20y%20me%20interesa%20una%20pieza"
+         target="_blank"
+         class="nav-cta">
+        Cotiza por WhatsApp
+      </a>
+    </div>
+  </nav>
+
+  <header class="portada">
+    <div class="portada-content">
+      <p class="portada-tag">·  Catálogo  ·  8 de Mayo 2026  ·</p>
+      <img src="assets/img/logo-zihuali-trans.png" alt="Zihualí" class="portada-logo">
+      <h1 class="portada-titulo">Zihualí</h1>
+      <p class="portada-subtitulo">Arte Tejido</p>
+      <hr class="portada-divider">
+      <p class="portada-coleccion-label">Primera Colección</p>
+      <p class="portada-coleccion-nombre">Herencia y Raíz</p>
+      <p class="portada-fechas">— Tejida en Marzo · A la venta desde el 8 de Mayo, 17:00 hrs —</p>
+      <p class="portada-frase">
+        " La fuerza de una<br>
+        es la fuerza de todas. "
+      </p>
+    </div>
+    <span class="scroll-cue">Desliza</span>
+  </header>
+
+  <section class="manifiesto">
+    <div class="manifiesto-content">
+      <span class="eyebrow">— Nuestra historia —</span>
+      <h2>Tejemos <em>raíz</em>.<br>Tejemos <em>linaje</em>.<br>Tejemos <em>libertad</em>.</h2>
+      <hr class="manifiesto-divider">
+      <p>
+        Zihualí significa Mujer en náhuatl. Y eso es exactamente lo que tejemos:
+        feminidad hecha cuenta, hilo a hilo, paciencia a paciencia.
+      </p>
+      <p>
+        Cada pieza nace en la Sierra Norte de Puebla, de las manos de mujeres
+        artesanas que dignifican una técnica de generaciones. No usamos máquinas.
+        No tomamos atajos. No replicamos en serie.
+      </p>
+      <p>
+        Lo que portas cuando portas Zihualí no es solo joyería: es el voto
+        silencioso de cada mujer que entendió que su oficio merece ser pagado
+        con justicia, mirado con admiración, y heredado con orgullo.
+      </p>
+      <p>
+        Cada cuenta es un sí.<br>
+        Un sí a la herencia. Un sí a la dignidad.<br>
+        Un sí a la mujer que fuiste, que eres, y que serás.
+      </p>
+      <p class="manifiesto-firma">— Equipo Zihualí, fundadoras</p>
+    </div>
+  </section>
+
+  <section class="estrategia">
+    <div class="container">
+      <div class="estrategia-header">
+        <span class="eyebrow">— Definición Estratégica —</span>
+        <h2>Quiénes somos</h2>
+        <hr>
+      </div>
+      <div class="estrategia-grid">
+        <div class="est-bloque">
+          <p class="est-label">— Propósito</p>
+          <h3 class="est-titulo">Empoderar a las mujeres nahuas de la Sierra Norte de Puebla.</h3>
+          <p class="est-descripcion">
+            Transformamos su <strong style="color: var(--dorado);">herencia cultural</strong> en joyería de diseño contemporáneo, bajo un modelo de <strong style="color: var(--dorado);">comercio justo</strong> que reconoce el valor real de su trabajo.
+          </p>
+        </div>
+        <div class="est-bloque">
+          <p class="est-label">— Misión</p>
+          <h3 class="est-titulo">Crear un puente entre el arte ancestral y el mundo moderno.</h3>
+          <p class="est-descripcion">
+            Dignificamos el trabajo de la mujer indígena ofreciendo piezas con alma —
+            no solo joyería, sino historias tejidas con la paciencia de quien sabe
+            que la belleza real toma tiempo.
+          </p>
+        </div>
+        <div class="est-bloque">
+          <p class="est-label">— Visión</p>
+          <h3 class="est-titulo">Ser el referente de lujo artesanal poblano.</h3>
+          <p class="est-descripcion">
+            Una marca que demuestre que el lujo más profundo no se mide en marcas,
+            sino en horas de oficio, en raíces respetadas, en mujeres dignificadas.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="valores">
+    <div class="container">
+      <div class="valores-header">
+        <span class="eyebrow">— Nuestros valores —</span>
+        <h2>Cuatro <em>pilares</em><br>tejidos a mano.</h2>
+        <p>Los principios que sostienen cada pieza, cada decisión, cada relación.</p>
+      </div>
+      <div class="valores-grid">
+        <div class="valor-item">
+          <p class="valor-num">01.</p>
+          <h3 class="valor-titulo">Sororidad</h3>
+          <p class="valor-desc">Mujeres apoyando mujeres. Cada compra fortalece a otra. La fuerza de una es la fuerza de todas.</p>
+        </div>
+        <div class="valor-item">
+          <p class="valor-num">02.</p>
+          <h3 class="valor-titulo">Transparencia</h3>
+          <p class="valor-desc">Sabes quién tejió tu pieza, cuánto tiempo le tomó, y qué porcentaje recibió la artesana.</p>
+        </div>
+        <div class="valor-item">
+          <p class="valor-num">03.</p>
+          <h3 class="valor-titulo">Respeto al origen</h3>
+          <p class="valor-desc">Honramos la técnica nahua sin apropiación: la celebramos, la pagamos y la nombramos.</p>
+        </div>
+        <div class="valor-item">
+          <p class="valor-num">04.</p>
+          <h3 class="valor-titulo">Calidad ejecutiva</h3>
+          <p class="valor-desc">Estándares del lujo internacional aplicados al arte popular mexicano. Tradición + diseño = lujo con alma.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion-portadilla">
+    <div class="seccion-portadilla-content">
+      <span class="eyebrow">— Sección 1 —</span>
+      <h2>Bordados</h2>
+      <p style="font-family: var(--font-display); font-style: italic; font-size: 1.5rem; color: var(--dorado); margin-top: 0.5rem;">El alma vestida</p>
+      <hr>
+      <p>Hasta 40 horas de bordado a mano sobre tela natural.<br>Una pieza, una herencia.</p>
+    </div>
+  </section>
+
+  <article class="pieza">
+    <div class="container pieza-grid">
+      <div class="pieza-imagen-wrapper">
+        <img src="assets/img/huipil-1.jpeg" alt="Huipil Otomí Rojo">
+        <div class="pieza-imagen-frame"></div>
+      </div>
+      <div>
+        <p class="pieza-categoria">— Bordados</p>
+        <h3 class="pieza-nombre">Huipil Otomí Rojo</h3>
+        <hr class="pieza-divider">
+        <p class="pieza-ref">Pieza maestra · Bordado tradicional otomí</p>
+        <p class="pieza-copy">"Una pieza de herencia que se hereda. Cada flor, cada ave, es un canto a la libertad."</p>
+        <div class="pieza-specs">
+          <div>
+            <p class="spec-label">Técnica</p>
+            <p class="spec-value">Bordado a mano sobre tela natural</p>
+          </div>
+          <div>
+            <p class="spec-label">Tiempo</p>
+            <p class="spec-value">40+ horas de bordado</p>
+          </div>
+        </div>
+        <p class="pieza-reserva-label">Reserva</p>
+        <a href="https://wa.me/525530523038?text=Hola%20Zihual%C3%AD%2C%20me%20interesa%20el%20Huipil%20Otom%C3%AD%20Rojo"
+           target="_blank" class="btn-reserva">
+          Cotiza por WhatsApp →
+        </a>
+      </div>
+    </div>
+  </article>
+
+  <section class="seccion-portadilla">
+    <div class="seccion-portadilla-content">
+      <span class="eyebrow">— Sección 2 · Marzo 2026 —</span>
+      <h2>Herencia<br>y <em>Raíz</em></h2>
+      <hr>
+      <p>Primera Colección.<br>22 piezas únicas en chaquira que celebran el renacer.<br>A la venta desde el 8 de Mayo, 17:00 hrs.</p>
+    </div>
+  </section>
+
+  <article class="pieza">
+    <div class="container pieza-grid">
+      <div class="pieza-imagen-wrapper">
+        <img src="assets/img/jardin-infinito.jpeg" alt="Jardín Infinito">
+        <div class="pieza-imagen-frame"></div>
+      </div>
+      <div>
+        <p class="pieza-categoria">— Herencia y Raíz</p>
+        <h3 class="pieza-nombre">Jardín Infinito</h3>
+        <hr class="pieza-divider">
+        <p class="pieza-ref">Pieza Insignia · Tejida en Marzo · 01 / 22</p>
+        <p class="pieza-copy">"Pieza de excepción. 60+ horas. Cientos de flores. Una declaración de amor a lo lento."</p>
+        <div class="pieza-specs">
+          <div><p class="spec-label">Técnica</p><p class="spec-value">Cascada de flores en cuerpo entero</p></div>
+          <div><p class="spec-label">Tiempo</p><p class="spec-value">60+ horas de tejido a mano</p></div>
+        </div>
+        <p class="pieza-reserva-label">Reserva</p>
+        <a href="https://wa.me/525530523038?text=Hola%20Zihual%C3%AD%2C%20me%20interesa%20Jard%C3%ADn%20Infinito"
+           target="_blank" class="btn-reserva">Cotiza por WhatsApp →</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="pieza">
+    <div class="container pieza-grid">
+      <div class="pieza-imagen-wrapper">
+        <img src="assets/img/bordado-esperanza.jpeg" alt="Bordado de Esperanza">
+        <div class="pieza-imagen-frame"></div>
+      </div>
+      <div>
+        <p class="pieza-categoria">— Herencia y Raíz</p>
+        <h3 class="pieza-nombre">Bordado de Esperanza</h3>
+        <hr class="pieza-divider">
+        <p class="pieza-ref">Edición Maestra · Tejida en Marzo · 02 / 22</p>
+        <p class="pieza-copy">"30 horas de tejido. Una vida entera de oficio. Pieza de edición maestra."</p>
+        <div class="pieza-specs">
+          <div><p class="spec-label">Técnica</p><p class="spec-value">Bordado de flores · azul eléctrico</p></div>
+          <div><p class="spec-label">Tiempo</p><p class="spec-value">30-35 horas — Maestra mayor</p></div>
+        </div>
+        <p class="pieza-reserva-label">Reserva</p>
+        <a href="https://wa.me/525530523038?text=Hola%20Zihual%C3%AD%2C%20me%20interesa%20Bordado%20de%20Esperanza"
+           target="_blank" class="btn-reserva">Cotiza por WhatsApp →</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="pieza">
+    <div class="container pieza-grid">
+      <div class="pieza-imagen-wrapper">
+        <img src="assets/img/senda-de-luz.jpeg" alt="Senda de Luz">
+        <div class="pieza-imagen-frame"></div>
+      </div>
+      <div>
+        <p class="pieza-categoria">— Herencia y Raíz</p>
+        <h3 class="pieza-nombre">Senda de Luz</h3>
+        <hr class="pieza-divider">
+        <p class="pieza-ref">Edición Maestra · Tejida en Marzo · 03 / 22</p>
+        <p class="pieza-copy">"Tres girasoles. Una promesa: no importa cuán nublado el día, tu luz no se niega."</p>
+        <div class="pieza-specs">
+          <div><p class="spec-label">Técnica</p><p class="spec-value">Bordado de girasoles</p></div>
+          <div><p class="spec-label">Tiempo</p><p class="spec-value">30-35 horas — Maestra mayor</p></div>
+        </div>
+        <p class="pieza-reserva-label">Reserva</p>
+        <a href="https://wa.me/525530523038?text=Hola%20Zihual%C3%AD%2C%20me%20interesa%20Senda%20de%20Luz"
+           target="_blank" class="btn-reserva">Cotiza por WhatsApp →</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="pieza">
+    <div class="container pieza-grid">
+      <div class="pieza-imagen-wrapper">
+        <img src="assets/img/reflejo-agua.jpeg" alt="Reflejo de Agua">
+        <div class="pieza-imagen-frame"></div>
+      </div>
+      <div>
+        <p class="pieza-categoria">— Herencia y Raíz</p>
+        <h3 class="pieza-nombre">Reflejo de Agua</h3>
+        <hr class="pieza-divider">
+        <p class="pieza-ref">Tejida en Marzo · 04 / 22 · Artesana: Ilse / Celerina</p>
+        <p class="pieza-copy">"Tres tonos. Una sola historia. Aqua, café y crema fluyen como un río que recuerda dónde nació."</p>
+        <div class="pieza-specs">
+          <div><p class="spec-label">Técnica</p><p class="spec-value">Flor tricolor en cascada — azul, café, crema</p></div>
+          <div><p class="spec-label">Tiempo</p><p class="spec-value">20-25 horas de tejido a mano</p></div>
+        </div>
+        <p class="pieza-reserva-label">Reserva</p>
+        <a href="https://wa.me/525530523038?text=Hola%20Zihual%C3%AD%2C%20me%20interesa%20Reflejo%20de%20Agua"
+           target="_blank" class="btn-reserva">Cotiza por WhatsApp →</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="pieza">
+    <div class="container pieza-grid">
+      <div class="pieza-imagen-wrapper">
+        <img src="assets/img/flor-amatista.jpeg" alt="Flor de Amatista">
+        <div class="pieza-imagen-frame"></div>
+      </div>
+      <div>
+        <p class="pieza-categoria">— Herencia y Raíz</p>
+        <h3 class="pieza-nombre">Flor de Amatista</h3>
+        <hr class="pieza-divider">
+        <p class="pieza-ref">Tejida en Marzo · 05 / 22</p>
+        <p class="pieza-copy">"La flor que florece en piedra preciosa. Para la mujer suave como pétalo y firme como cristal."</p>
+        <div class="pieza-specs">
+          <div><p class="spec-label">Técnica</p><p class="spec-value">Flor tricolor en cascada — morado, rosa, crema</p></div>
+          <div><p class="spec-label">Tiempo</p><p class="spec-value">20-25 horas de tejido a mano</p></div>
+        </div>
+        <p class="pieza-reserva-label">Reserva</p>
+        <a href="https://wa.me/525530523038?text=Hola%20Zihual%C3%AD%2C%20me%20interesa%20Flor%20de%20Amatista"
+           target="_blank" class="btn-reserva">Cotiza por WhatsApp →</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="pieza">
+    <div class="container pieza-grid">
+      <div class="pieza-imagen-wrapper">
+        <img src="assets/img/obsidiana-sagrada.jpeg" alt="Obsidiana Sagrada">
+        <div class="pieza-imagen-frame"></div>
+      </div>
+      <div>
+        <p class="pieza-categoria">— Herencia y Raíz</p>
+        <h3 class="pieza-nombre">Obsidiana Sagrada</h3>
+        <hr class="pieza-divider">
+        <p class="pieza-ref">Tejida en Marzo · 06 / 22</p>
+        <p class="pieza-copy">"El poder del silencio absoluto. Tan elegante como tu intuición."</p>
+        <div class="pieza-specs">
+          <div><p class="spec-label">Técnica</p><p class="spec-value">Hamaca monocromática · chaquira negra</p></div>
+          <div><p class="spec-label">Tiempo</p><p class="spec-value">15-18 horas de tejido a mano</p></div>
+        </div>
+        <p class="pieza-reserva-label">Reserva</p>
+        <a href="https://wa.me/525530523038?text=Hola%20Zihual%C3%AD%2C%20me%20interesa%20Obsidiana%20Sagrada"
+           target="_blank" class="btn-reserva">Cotiza por WhatsApp →</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="pieza">
+    <div class="container pieza-grid">
+      <div class="pieza-imagen-wrapper">
+        <img src="assets/img/dignidad-soberana.jpeg" alt="Dignidad Soberana">
+        <div class="pieza-imagen-frame"></div>
+      </div>
+      <div>
+        <p class="pieza-categoria">— Herencia y Raíz</p>
+        <h3 class="pieza-nombre">Dignidad Soberana</h3>
+        <hr class="pieza-divider">
+        <p class="pieza-ref">Tejida en Marzo · 07 / 22</p>
+        <p class="pieza-copy">"Para la mujer que no pide permiso para brillar. Morado soberano tejido cuenta a cuenta."</p>
+        <div class="pieza-specs">
+          <div><p class="spec-label">Técnica</p><p class="spec-value">Tejido monocromático en chaquira morada</p></div>
+          <div><p class="spec-label">Tiempo</p><p class="spec-value">12-15 horas de tejido a mano</p></div>
+        </div>
+        <p class="pieza-reserva-label">Reserva</p>
+        <a href="https://wa.me/525530523038?text=Hola%20Zihual%C3%AD%2C%20me%20interesa%20Dignidad%20Soberana"
+           target="_blank" class="btn-reserva">Cotiza por WhatsApp →</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="pieza">
+    <div class="container pieza-grid">
+      <div class="pieza-imagen-wrapper">
+        <img src="assets/img/alma-de-seda.jpeg" alt="Alma de Seda">
+        <div class="pieza-imagen-frame"></div>
+      </div>
+      <div>
+        <p class="pieza-categoria">— Herencia y Raíz</p>
+        <h3 class="pieza-nombre">Alma de Seda</h3>
+        <hr class="pieza-divider">
+        <p class="pieza-ref">Tejida en Marzo · 08 / 22</p>
+        <p class="pieza-copy">"Suave como tu intuición. Firme como tu palabra. Una pieza que envuelve sin ahogar."</p>
+        <div class="pieza-specs">
+          <div><p class="spec-label">Técnica</p><p class="spec-value">Gargantilla tubular · palo de rosa</p></div>
+          <div><p class="spec-label">Tiempo</p><p class="spec-value">10-12 horas de tejido a mano</p></div>
+        </div>
+        <p class="pieza-reserva-label">Reserva</p>
+        <a href="https://wa.me/525530523038?text=Hola%20Zihual%C3%AD%2C%20me%20interesa%20Alma%20de%20Seda"
+           target="_blank" class="btn-reserva">Cotiza por WhatsApp →</a>
+      </div>
+    </div>
+  </article>
+
+  <section class="cierre">
+    <div class="cierre-content">
+      <span class="eyebrow" style="color: var(--dorado);">— Tu pieza te espera —</span>
+      <h2>Reserva tu<br><em>Zihualí</em></h2>
+      <p>
+        Cada pieza es única. Cuando se va, no vuelve igual.<br>
+        Asegura la tuya hoy.
+      </p>
+      <div class="cierre-grid">
+        <a href="https://wa.me/525530523038?text=Hola%20Zihual%C3%AD%2C%20vi%20su%20cat%C3%A1logo%20y%20me%20interesa%20una%20pieza"
+           target="_blank" class="cierre-card">
+          <p class="cierre-card-label">WhatsApp</p>
+          <p class="cierre-card-value">55 3052 3038</p>
+          <p class="cierre-card-desc">Para reservar tu pieza<br>y resolver dudas</p>
+        </a>
+        <a href="https://instagram.com/zihuali.mx" target="_blank" class="cierre-card">
+          <p class="cierre-card-label">Instagram</p>
+          <p class="cierre-card-value">@zihuali.mx</p>
+          <p class="cierre-card-desc">Inspiración diaria<br>y nuevas colecciones</p>
+        </a>
+      </div>
+      <p class="cierre-info">
+        ·  Envíos a todo México · Empaque artesanal incluido  ·<br>
+        Tiempo de entrega: 3 a 7 días hábiles
+      </p>
+      <p class="cierre-quote">
+        " La fuerza de una<br>
+        es la fuerza de todas. "
+      </p>
+      <p class="cierre-tagline">Zihualí · Arte Tejido · Hecho en México · 2026</p>
+    </div>
+  </section>
+
+  <a href="https://wa.me/525530523038?text=Hola%20Zihual%C3%AD%2C%20vi%20su%20cat%C3%A1logo%20y%20me%20interesa%20una%20pieza"
+     target="_blank" class="whatsapp-floating" aria-label="Contactar por WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) nav.classList.add('scrolled');
+      else nav.classList.remove('scrolled');
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.pieza, .seccion-portadilla, .est-bloque, .valor-item').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(40px)';
+      el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+      observer.observe(el);
+    });
+  </script>
+
+</body>
+</html>
